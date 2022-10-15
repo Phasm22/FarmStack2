@@ -3,6 +3,7 @@ backend/__pycache__/database.cpython-310.pyc
 backend/__pycache__/main.cpython-310.pyc
 backend/__pycache__/model.cpython-310.pyc
 backend/Pipfile
+frontend/
 .venv
 .env
 
