@@ -7,3 +7,9 @@ frontend/
 .venv
 .env
 
+backend/.vscode/launch.json
+.gitignore
+backend/.vscode/settings.json
+backend/__pycache__/dataUpdate.cpython-310.pyc
+backend/__pycache__/people.cpython-310.pyc
+.vscode/launch.json
