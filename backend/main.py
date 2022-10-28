@@ -1,5 +1,8 @@
 from http.client import HTTPException
-from database import *
+from model import Todo
+from database import (
+    fetch_all_todos, fetch_one_todo, remove_todo, create_todo, update_todo
+)
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -9,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 
-origins = ['https://localhost:3000']
+origins = ['http://localhost:3000']
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,7 +34,7 @@ async def get_todo():
     return response
 
 
-@app.get("/api/todo{name}", response_model=Todo)
+@app.get("/api/todo/{name}", response_model=Todo)
 async def get_todo_by_id(name):
     response = fetch_one_todo(name)
     if response:
@@ -40,7 +43,7 @@ async def get_todo_by_id(name):
         404, f"There is no person with this name: {name} ")
 
 
-@app.post("/api/todo", response_model=Todo)
+@app.post("/api/todo/", response_model=Todo)
 async def post_todo(todo: Todo):
     response = await create_todo(todo.dict())
     if response:
@@ -48,7 +51,7 @@ async def post_todo(todo: Todo):
     raise HTTPException(404, "Something went wrong / Bad Request")
 
 
-@app.put("/api/todo{name}/", response_model=Todo)
+@app.put("/api/todo/{name}", response_model=Todo)
 async def put_todo(name: str, dept: str):
     response = await update_todo(name, dept)
     if response:
@@ -56,7 +59,7 @@ async def put_todo(name: str, dept: str):
     raise HTTPException(404, f"There is no person with this name: {name} ")
 
 
-@app.delete("/api/todo{name}")
+@app.delete("/api/todo/{name}")
 async def delete_todo(name):
     response = await remove_todo(name)
     if response:
