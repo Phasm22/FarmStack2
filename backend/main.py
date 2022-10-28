@@ -35,7 +35,7 @@ async def get_todo():
 
 
 @app.get("/api/todo/{name}", response_model=Todo)
-async def get_todo_by_id(name):
+async def get_todo_by_name(name):
     response = fetch_one_todo(name)
     if response:
         return response

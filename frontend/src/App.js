@@ -17,7 +17,7 @@ function App() {
     axios.get("http://localhost:8000/api/todo").then((res) => {
       setTodoList(res.data);
     });
-  });
+  }, []);
 
   // Post an Employee
   const addEmployeeHandler = () => {
