@@ -104,7 +104,6 @@ class EmployeeTest:
         lastLine = True
         with open('people.txt', 'w+') as f:
             for item, (k, v) in enumerate(self.employDict.items()):
-                print(Employee.fname(k))
                 # inserts line break at end of for loop
                 if lastLine is False:
                     f.write('\n')
@@ -129,8 +128,8 @@ class EmployeeTest:
                             updateDept = v
 
                     # For loop to update database
-                  #  dataUpdate.DataUpdate(
-                   #     updateName, updateID, updateDept)
+                    dataUpdate.DataUpdate(
+                        updateName, updateID, updateDept)
 
                 except SyntaxError as s:
                     print('Save Error\n', s)

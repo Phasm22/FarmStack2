@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,13 +11,26 @@ function App() {
   const [name, setName] = useState("");
   const [ID, setID] = useState("");
   const [dept, setDept] = useState("");
+  const isInitialMount = useRef(true);
 
+  /*
   // Read all employees
   useEffect(() => {
     axios.get("http://localhost:8000/api/todo").then((res) => {
       setTodoList(res.data);
     });
-  }, []);
+  }, []);*/
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      // Your useEffect code here to be run on update
+      axios.get("http://localhost:8000/api/todo").then((res) => {
+        setTodoList(res.data);
+      });
+    }
+  });
 
   // Post an Employee
   const addEmployeeHandler = () => {
