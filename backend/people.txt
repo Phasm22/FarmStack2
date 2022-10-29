@@ -1,2 +1,2 @@
-Walsen Walker Verner,23423,Runner
-Ben White,234234,Track
+Walsen Walker,23423,Runner
+Ben White,234234,Track&Field
