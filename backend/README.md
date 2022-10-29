@@ -16,5 +16,5 @@ The main app starts the server
 
 ## Screenshots
 
-![Interface](FarmStack.png)
+![Interface](/frontend/src/FarmStack.png)
 
