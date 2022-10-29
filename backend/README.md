@@ -13,8 +13,3 @@ The main app starts the server
 - Employee Database
 - FastAPI
 - MongoDB Management
-
-## Screenshots
-
-![Interface](/../frontend/src/FarmStack.png)
-
