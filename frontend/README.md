@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-The app was built off of an original python script. This program provides a command-line interface for managing employee records, allowing users to add, modify, search, and delete employee data while saving changes to a file. It also includes error handling for files not found and invalid input.
+The app was built off of an original python script. This script provides a command-line interface for managing employee records, allowing users to add, modify, search, and delete employee data while saving changes to a file. It also includes error handling for files not found and invalid input.
 
 ## Available Scripts
 
